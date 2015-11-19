@@ -6,6 +6,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -60,6 +61,10 @@ public class ChooseAreaActivity extends Activity{
 	 */
 	private City selectedCity;
 	/**
+	 * 选中的县
+	 */
+	private County selectedCounty;
+	/**
 	 * 当前选中的级别
 	 */
 	private int currentLevel;
@@ -86,6 +91,14 @@ public class ChooseAreaActivity extends Activity{
 				}else if(currentLevel == LEVEL_CITY){
 					selectedCity = cityList.get(index);
 					queryCounties();
+				}else if(currentLevel==LEVEL_COUNTY){
+					//Toast.makeText(ChooseAreaActivity.this, "测试", 1).show();
+					selectedCounty = countyList.get(index);
+					Intent intent = new Intent(ChooseAreaActivity.this,WeatherActivity.class);
+					Bundle bundle = new Bundle();
+					bundle.putSerializable("list", selectedCounty);
+					intent.putExtra("list_bundle", bundle);
+					startActivity(intent);
 				}
 			}
 			

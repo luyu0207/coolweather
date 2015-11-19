@@ -28,6 +28,10 @@ public class CoolWeathreOpenHelper extends SQLiteOpenHelper{
 		 +"id integer primary key autoincrement,"
 		 +"country_name text,"
 		 +"country_code text,"
+		 +"state_detail text,"
+		 +"temp1 text,"
+		 +"temp2 text,"
+		 +"windState text,"
 		 +"city_code text)";
 	
 	

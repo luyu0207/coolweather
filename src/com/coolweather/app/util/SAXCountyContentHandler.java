@@ -37,6 +37,10 @@ public class SAXCountyContentHandler extends DefaultHandler {
 			county = new County();
 			county.setCountyName(attributes.getValue(2));
 			county.setCountyCode(attributes.getValue(5));
+			county.setStateDetailed(attributes.getValue(8));
+			county.setTemp1(attributes.getValue(9));
+			county.setTemp2(attributes.getValue(10));
+			county.setWindState(attributes.getValue(12));
 			county.setCityCode(lx);
 		}else{
 			lx = qName;
